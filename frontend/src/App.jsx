@@ -23,7 +23,7 @@ function App() {
 
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:3001/analyze", { method: "POST", body: formData });
+      const res = await fetch("https://cropdetector-i4rm.onrender.com/analyze", { method: "POST", body: formData });
       const data = await res.json();
       if (data.error) throw new Error(data.error);
       setResult(data);
