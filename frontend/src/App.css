@@ -66,7 +66,7 @@ input[type="file"]::file-selector-button {
 
 input[type="file"]::file-selector-button:hover {
   background: #4caf50;
-  color: white;
+  color: black;
 }
 
 .preview-img {
@@ -123,7 +123,7 @@ input[type="file"]::file-selector-button:hover {
 }
 
 .info-box strong {
-  color: #2d5a27;
+  color: black;
   display: block;
   margin-bottom: 5px;
 }
