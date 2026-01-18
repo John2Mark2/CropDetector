@@ -1,11 +1,12 @@
 /* --- Color Palette ---
    White: #ffffff
+   Black Info: #000000
    Dark Green: #2d5a27
    Light Green: #4caf50 
 --- */
 
 body {
-  background-color: #f8faf8; /* Very light grey-green tint */
+  background-color: #f8faf8; 
   font-family: 'Inter', 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
@@ -16,17 +17,17 @@ body {
 
 .container {
   width: 95%;
-  max-width: 600px;
+  max-width: 650px;
   background: #ffffff;
   margin: 20px auto;
   padding: 30px 20px;
-  border-radius: 24px; /* Softer, modern corners */
-  box-shadow: 0 10px 25px rgba(45, 90, 39, 0.1); /* Soft green glow shadow */
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(45, 90, 39, 0.1);
   box-sizing: border-box;
 }
 
 header h2 {
-  color: #2d5a27; /* Dark Green */
+  color: #2d5a27;
   font-size: 2rem;
   margin-bottom: 10px;
   text-align: center;
@@ -34,79 +35,60 @@ header h2 {
 
 header p {
   text-align: center;
-  color: #666;
+  color: #555; /* Subtle grey for subtitle */
   margin-bottom: 30px;
 }
 
-/* --- Upload Area (Matching imagePreview.png) --- */
+/* --- Upload Area --- */
 .upload-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-  border: 2px dashed #4caf50; /* Light Green dashed border */
+  border: 2px dashed #4caf50;
   border-radius: 20px;
   background-color: #f9fff9;
-  transition: all 0.3s ease;
+  margin-bottom: 20px;
 }
 
-/* Centers the "Choose File" styling */
-input[type="file"]::file-selector-button {
-  padding: 10px 20px;
-  border-radius: 50px; /* Pill shape like Button.jpg */
-  border: 2px solid #4caf50;
-  background: white;
-  color: #4caf50;
-  font-weight: 600;
-  cursor: pointer;
+#file-upload {
+  width: 100%;
+  max-width: 250px;
   margin-bottom: 15px;
-  transition: 0.3s;
-}
-
-input[type="file"]::file-selector-button:hover {
-  background: #4caf50;
-  color: black;
+  color: #000000; /* File name in black */
 }
 
 .preview-img {
   width: 100%;
-  max-width: 300px;
+  max-width: 320px;
   border-radius: 15px;
   margin: 15px 0;
-  border: 1px solid #ddd;
+  border: 2px solid #333;
 }
 
-/* --- Main Action Button (Matching Button.jpg) --- */
 .main-btn {
   width: 100%;
-  max-width: 250px;
+  max-width: 280px;
   padding: 16px;
-  background: #2d5a27; /* Dark Green Primary */
+  background: #2d5a27;
   color: white;
   font-size: 1.1rem;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 1px;
   border: none;
-  border-radius: 50px; /* Perfectly rounded pill shape */
+  border-radius: 50px;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3);
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 .main-btn:hover {
-  background: #4caf50; /* Changes to Light Green on hover */
+  background: #4caf50;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
 }
 
-.main-btn:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-}
-
-/* --- Results Grid --- */
+/* --- Results Section (Black Text Focused) --- */
 .result-grid {
   margin-top: 30px;
   display: grid;
@@ -117,26 +99,36 @@ input[type="file"]::file-selector-button:hover {
 .info-box {
   padding: 18px;
   background: white;
-  border: 1px solid #e0e0e0;
-  border-left: 5px solid #2d5a27; /* Dark green accent line */
+  border: 1px solid #ddd;
+  border-left: 6px solid #2d5a27; /* Dark green accent */
   border-radius: 12px;
+  color: #000000; /* Main text is now Black */
+  font-size: 1.05rem;
+  line-height: 1.5;
 }
 
 .info-box strong {
-  color: black;
+  color: #2d5a27; /* Labels stay Green for organization */
   display: block;
   margin-bottom: 5px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .treatment-box {
-  background: #f1f8f1; /* Very light green background */
+  background: #f1f8f1; 
   border: 1px solid #4caf50;
   grid-column: 1 / -1;
+  color: #000000; /* Treatment text in Black */
 }
 
-/* --- Mobile Responsiveness --- */
+/* --- Responsive Desktop Adjustments --- */
 @media (min-width: 600px) {
   .result-grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .treatment-box {
+    grid-column: span 2;
   }
 }
