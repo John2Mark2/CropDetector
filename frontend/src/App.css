@@ -1,83 +1,142 @@
-/* Responsive 2D Design */
+/* --- Color Palette ---
+   White: #ffffff
+   Dark Green: #2d5a27
+   Light Green: #4caf50 
+--- */
+
 body {
-  background-color: #f0f2f0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8faf8; /* Very light grey-green tint */
+  font-family: 'Inter', 'Segoe UI', sans-serif;
   margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
-  padding: 20px;
+  min-height: 100vh;
 }
 
 .container {
-  width: 100%;
-  max-width: 700px;
+  width: 95%;
+  max-width: 600px;
   background: #ffffff;
-  padding: 30px;
-  border: 3px solid #333; /* Strong 2D border */
-  border-radius: 12px;
-  box-shadow: 8px 8px 0px #2d5a27; /* Flat 2D shadow */
+  margin: 20px auto;
+  padding: 30px 20px;
+  border-radius: 24px; /* Softer, modern corners */
+  box-shadow: 0 10px 25px rgba(45, 90, 39, 0.1); /* Soft green glow shadow */
+  box-sizing: border-box;
 }
 
-header { text-align: center; margin-bottom: 25px; }
-h2 { color: #2d5a27; margin: 0; }
+header h2 {
+  color: #2d5a27; /* Dark Green */
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
 
+header p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* --- Upload Area (Matching imagePreview.png) --- */
 .upload-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  padding: 20px;
-  border: 2px dashed #4caf50;
-  border-radius: 8px;
-  background: #f9fff9;
+  justify-content: center;
+  padding: 40px 20px;
+  border: 2px dashed #4caf50; /* Light Green dashed border */
+  border-radius: 20px;
+  background-color: #f9fff9;
+  transition: all 0.3s ease;
+}
+
+/* Centers the "Choose File" styling */
+input[type="file"]::file-selector-button {
+  padding: 10px 20px;
+  border-radius: 50px; /* Pill shape like Button.jpg */
+  border: 2px solid #4caf50;
+  background: white;
+  color: #4caf50;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: #4caf50;
+  color: white;
 }
 
 .preview-img {
   width: 100%;
-  max-width: 350px;
-  border: 2px solid #333;
-  border-radius: 8px;
+  max-width: 300px;
+  border-radius: 15px;
+  margin: 15px 0;
+  border: 1px solid #ddd;
 }
 
+/* --- Main Action Button (Matching Button.jpg) --- */
 .main-btn {
   width: 100%;
-  padding: 15px;
-  background: #4caf50;
+  max-width: 250px;
+  padding: 16px;
+  background: #2d5a27; /* Dark Green Primary */
   color: white;
+  font-size: 1.1rem;
   font-weight: bold;
-  border: 2px solid #333;
-  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 50px; /* Perfectly rounded pill shape */
   cursor: pointer;
-  transition: 0.2s;
+  box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3);
+  transition: all 0.3s ease;
 }
 
-.main-btn:active { transform: translate(2px, 2px); }
+.main-btn:hover {
+  background: #4caf50; /* Changes to Light Green on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
 
-/* Responsive Grid */
+.main-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* --- Results Grid --- */
 .result-grid {
   margin-top: 30px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 15px;
 }
 
 .info-box {
-  padding: 15px;
-  border: 2px solid #333;
-  border-radius: 6px;
-  background: black;
+  padding: 18px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-left: 5px solid #2d5a27; /* Dark green accent line */
+  border-radius: 12px;
 }
 
-.full-width { grid-column: span 2; }
+.info-box strong {
+  color: #2d5a27;
+  display: block;
+  margin-bottom: 5px;
+}
 
 .treatment-box {
-  background: #1c381e;
-  border-color: #4caf50;
+  background: #f1f8f1; /* Very light green background */
+  border: 1px solid #4caf50;
+  grid-column: 1 / -1;
 }
 
-/* Mobile View */
-@media (max-width: 600px) {
-  .result-grid { grid-template-columns: 1fr; }
-  .full-width { grid-column: span 1; }
-  .container { padding: 15px; }
+/* --- Mobile Responsiveness --- */
+@media (min-width: 600px) {
+  .result-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
